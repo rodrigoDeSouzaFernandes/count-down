@@ -6,7 +6,7 @@ import Footer from './Components/Footer';
 import Header from './Components/Header';
 
 function App() {
-  const [time, setTime] = useState({ms:0,s:0,m:0,h:0});
+  const [time, setTime] = useState({ms:0,s:0,m:5});
   const [interv, setInterv] = useState()
   const [status, setStatus] = useState(0)
 
@@ -19,20 +19,20 @@ function App() {
   let updateMs = time.ms, updateM = time.m, updateS = time.s, updateH = time.h;
 
   const run = () => {
+
+    if(updateM === -1) {
+      return reset();
+    }
+    if( updateS === -1){
+      updateM -= 1;
+      updateS = 59;
+    }
+    if( updateMs === -1){
+      updateS -= 1;
+      updateMs = 100;
+    }
     
-    if( updateM === 60){
-      updateH += 1;
-      updateM = 0;
-    }
-    if( updateS === 60){
-      updateM += 1;
-      updateS = 0;
-    }
-    if( updateMs === 100){
-      updateS += 1;
-      updateMs = 0;
-    }
-    updateMs ++;
+    updateMs --;
     return setTime({ms:updateMs, s:updateS, m:updateM, h:updateH})
   }
 
@@ -45,15 +45,18 @@ function App() {
     setStatus(0);
     setTime({ms:0,s:0,m:0,h:0})
   }
-  const resume = () => start();
-  
+  const resume = () => {
+    run();
+    setStatus(1);
+    setInterv(setInterval(run,10));
+  }
 
   return (
     <div className="main-section">
       <Header/>
       <div className="clock-holder">
         <div className="stopwatch">
-          <Timer time={time}/>
+          <Timer status={status} time={time}/>
           <Btntimer status={status} stop={stop} resume={resume} reset={reset} start={start}/>
         </div>
       </div>

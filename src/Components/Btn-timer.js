@@ -5,15 +5,15 @@ class Btntimer extends React.Component {
         return(
             <div>
                 {(this.props.status === 0) ? 
-                <button className="stopwatch-btn stopwatch-btn-green" 
+                <button className="stopwatch-btn-green big" 
                 onClick={this.props.start}>Start</button> : ""
                 }
                 
                 {(this.props.status === 1) ? 
                 <div>
-                    <button className="stopwatch-btn stopwatch-btn-green" 
+                    <button className="stopwatch-btn stopwatch-btn-red" 
                         onClick={this.props.stop}>Stop</button> 
-                    <button className="stopwatch-btn stopwatch-btn-green" 
+                    <button className="stopwatch-btn stopwatch-btn-yellow" 
                         onClick={this.props.reset}>Reset</button> 
                  </div> : ""
                 }
@@ -21,7 +21,7 @@ class Btntimer extends React.Component {
                 <div>
                     <button className="stopwatch-btn stopwatch-btn-green" 
                         onClick={this.props.resume}>Resume</button> 
-                    <button className="stopwatch-btn stopwatch-btn-green" 
+                    <button className="stopwatch-btn stopwatch-btn-yellow" 
                         onClick={this.props.reset}>Reset</button> 
                  </div> : ""
                 }

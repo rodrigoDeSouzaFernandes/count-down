@@ -14,7 +14,23 @@ footer {
 
 }
 header {
-  background: #FFF;
+  background: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border-radius: 10px;
+  border: #fff 1px solid;
+}
+header img {
+  width: 10vmax;
+}
+header span {
+  font-size: 30px;
+  font-family: monospace;
+  display: flex;;
+  font-weight: bold;
 }
 
 .countdown {
@@ -59,7 +75,7 @@ header {
 }
 
 .stopwatch {
-  padding: 60px 0;
+  padding: 20px 0;
   text-align: center;
 }
 
@@ -76,7 +92,7 @@ header {
 
 .stopwatch .stopwatch-btn {
   background: #fff;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 5px;
   border:none;
   padding:12px 20px;
@@ -106,7 +122,7 @@ header {
   color:#fff;
 }
 .stopwatch .stopwatch-btn-yellow:hover{
-  background: #c85454;
+  background: #ffc900;
   border:2px solid #ffc900;
   color:#fff;
 }
@@ -116,6 +132,44 @@ header {
   color:#fff;
 }
 
+.input-btn {
+  border: none;
+  background-color: grey;
+  margin-bottom: 20px;
+  height: 30px;
+  width: 50px;
+  text-align: center;
+  border-radius: 5px;
+  font-size:20px;
+  font-weight: bold;
+}
 
+.set-time-btn {
+  background: transparent;
+  margin-top: 20px;
+  margin: 5px;
+  border:none;
+  padding:10px 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 75px;
+  transition: background 1s;
+  cursor: pointer;
+  text-align: center;
+}
+.input-container{
+  margin-bottom: 20px;
+}
 
-
+.big{
+  background: #fff;
+  margin-top: 20px;
+  margin-left: 5px;
+  border:none;
+  padding:12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 250px;
+  transition: background 1s;
+  cursor: pointer;
+}
