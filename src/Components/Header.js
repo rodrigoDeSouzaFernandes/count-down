@@ -1,11 +1,11 @@
 import React from "react";
-import Countdown from "./Countdown";
 class Header extends React.Component {
     render(){
         return(
-            <div>
-                <Countdown futureDate="2022-05-05 00:00:00"/>
-            </div>
+            <header>
+                <span>Intervalo</span>
+                <img src="https://uploads-ssl.webflow.com/5fba98ad987231cf0efa3d58/5fba9c9a93a2e77624258d49_Logo.svg"></img>
+            </header>
         );
     }
 }

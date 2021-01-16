@@ -3,10 +3,10 @@ import moment, { duration } from 'moment'
 
 class Countdown extends React.Component {
     state = {
-        days:0,
-        hours:0,
-        minutes:0,
-        seconds:0,
+        dias:0,
+        horas:0,
+        minutos:0,
+        segundos:0,
     }
 
     setCountdown() {
@@ -14,16 +14,16 @@ class Countdown extends React.Component {
         const today = moment();
         const clockDuration = duration(futureDate.diff(today));
 
-        const days = Math.floor(clockDuration.asDays());
-        const hours = clockDuration.hours();
-        const minutes = clockDuration.minutes();
-        const seconds = clockDuration.seconds();
+        const dias = Math.floor(clockDuration.asDays());
+        const horas = clockDuration.hours();
+        const minutos = clockDuration.minutes();
+        const segundos = clockDuration.seconds();
 
         this.setState({
-            days,
-            hours,
-            minutes,
-            seconds,
+            dias,
+            horas,
+            minutos,
+            segundos,
         });
     }
 
@@ -47,16 +47,21 @@ class Countdown extends React.Component {
   render() {
     return(
       <div className="countdown">
-        {Object.keys(this.state).map((key, i) => (
-            <div className="countdown-segment">
-                <span className="countdown-segment-number">
-                    {this.addZeros(this.state[key])}
-                </span>
-                <span className="countdown-segment-caption">
-                    {key.toUpperCase()}
-                </span>
+          <span className="countdown-init-message">Não desanime! faltam apenas: </span>
+          <div className="countdown-segment">
+            {Object.keys(this.state).map((key, i) => (
+                <div>
+                    <span className="countdown-segment-number">
+                        {this.addZeros(this.state[key])}
+                    </span>
+                    <span className="countdown-segment-caption">
+                        {key.toUpperCase()}
+                    </span>
+                </div>
+            ))}
+            
             </div>
-    ))}
+            <span className="countdown-end-message">para a formatura da turma 08 na Trybe! \O/ </span>
       </div>
     );
   }
