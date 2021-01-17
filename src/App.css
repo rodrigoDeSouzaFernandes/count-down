@@ -77,6 +77,11 @@ header span {
 .stopwatch {
   padding: 20px 0;
   text-align: center;
+  min-height: 195px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .stopwatch span {
@@ -87,7 +92,9 @@ header span {
   font-size: 22px;
   padding:20px;
   border-radius:5px;
-  width:70px;
+  width:140px;
+  text-align: center;
+  font-size: 25px;
 }
 
 .stopwatch .stopwatch-btn {
@@ -157,8 +164,9 @@ header span {
   cursor: pointer;
   text-align: center;
 }
-.input-container{
-  margin-bottom: 20px;
+
+.selected {
+  background: black;
 }
 
 .big{
@@ -173,3 +181,4 @@ header span {
   transition: background 1s;
   cursor: pointer;
 }
+
