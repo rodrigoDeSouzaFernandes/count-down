@@ -30,7 +30,7 @@ function App() {
 
   const run = () => {
 
-    if(updateM === -1) {
+    if(updateM === 0 && updateS === 0 && updateMs === -1) {
       return reset();
     }
     if( updateS === -1){
@@ -55,7 +55,7 @@ function App() {
   const reset = () => {
     clearInterval(interv)
     setStatus(0);
-    setTime({ms:0,s:0,m:0,h:0})
+    setTime({ms:0,s:0,m:5,h:0})
   }
   const resume = () => {
     run();
